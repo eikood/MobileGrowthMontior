@@ -23,11 +23,9 @@ package de.hs_mannheim.planb.mobilegrowthmonitor;
 public class ExampleUnitTest {
 
 
-    @Test
-    public void addition_isCorrect() throws Exception {
-        assertEquals(4, 2 + 2);
-    }
-
+    //Package: pinlock
+    //Tested Class: App
+    //the reference of new instances is tested
     @Test
     public void testApp(){
         LockManager lm = LockManager.getInstance();
@@ -36,6 +34,9 @@ public class ExampleUnitTest {
         lm = null;
     }
 
+    //Package: imageprocessing
+    //Tested Class: NativeCam
+    //the reference of new instances is tested
     @Test
     public void testNativeCam(){
         NativeCam n = new NativeCam();
@@ -53,6 +54,9 @@ public class ExampleUnitTest {
     }
   */
 
+    //Package: datavisual
+    //Tested Class: ImageAdapter
+    //the reference of new instances is tested
     @Test
     public void testImageAdapter(){
         ArrayList<Bitmap> list = new ArrayList<>();
@@ -62,7 +66,9 @@ public class ExampleUnitTest {
         ia = null;
     }
 
-    /*Mocked
+    //Package: datavisual
+    //Tested Class: ListAdapter
+    //the reference of new instances is tested
     @Test
     public void testListAdapter(){
         List<ProfileData> list = new ArrayList<ProfileData>();
@@ -70,16 +76,19 @@ public class ExampleUnitTest {
         assertEquals(0, la.getItemCount());
         la = null;
     }
-    */
 
+    /*
     @Test
     public void testPasscode(){
-        AppLock al = new AppLock(/*App als Parameter*/ null);
+        AppLock al = new AppLock(App als Parameter, null);
         // MEthode aufrufen mit gespeichertem Passwort, dann assertTrue(PASSWORD, al.checkPassword)
         //setPasscode aufrufen , danach prüfen ob !PASSWORD_PREFERENCE_KEY.equals("passcode");
         // wenn Password gesetzt ist, kann isPasscode getestet werden
-    }
+    }*/
 
+    //Package: pinlock
+    //Tested Class: Encryptor
+    //the reference of new instances is tested
     @Test
     public void testEncryptor() {
         String v = Encryptor.getSHA1("test");
@@ -88,6 +97,7 @@ public class ExampleUnitTest {
         assertEquals(null, b);
     }
 
+    @Test
     public void sizeIsMeasured() throws Exception{
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         ImageProcess ip = new ImageProcess();
